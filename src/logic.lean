@@ -21,13 +21,15 @@ end
 theorem doubleneg_elim :
   ¬¬P → P  :=
 begin
-  sorry,
+  intro pb,
+  apply pb,
 end
 
 theorem doubleneg_law :
   ¬¬P ↔ P  :=
 begin
-  sorry,
+  split,
+  intro pb,
 end
 
 ------------------------------------------------
@@ -37,7 +39,12 @@ end
 theorem disj_comm :
   (P ∨ Q) → (Q ∨ P)  :=
 begin
-  sorry,
+  intro pb,
+  cases pb with hp hq,
+  right,
+  exact hp,
+  left,
+  exact hq,
 end
 
 theorem conj_comm :
@@ -71,7 +78,12 @@ end
 theorem impl_as_contrapositive :
   (P → Q) → (¬Q → ¬P)  :=
 begin
-  sorry,
+  intro pb,
+  intro qb,
+  intro p,
+  have q:Q := pb p,
+  have b:false :=qb q,
+  contradiction,
 end
 
 theorem impl_as_contrapositive_converse :
