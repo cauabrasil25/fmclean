@@ -134,7 +134,8 @@
     },
     {
       "lean": "lemma add_squared (a b : mynat) :\n  (a + b) ^ (2 : mynat) = a ^ (2 : mynat) + b ^ (2 : mynat) + 2 * a * b :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "rw two_eq_succ_one,\r\nrw one_eq_succ_zero,\r\nrepeat {rw pow_succ},\r\nrw pow_zero,\r\nrw pow_zero,\r\nrw one_mul,\r\nrw one_mul,\r\nrw pow_zero,\r\nrw one_mul,\r\nsimp,\r\nrw mul_succ,\r\nrw mul_succ,\r\nrw mul_zero,\r\nrw zero_add,\r\nrw mul_add a,\r\nrw mul_add,\r\nsimp,\r\nrw mul_add,\r\nsimp,\r\nrw mul_add,\r\nsimp, "
     },
     {
       "lean": "example (P Q : Type) (p : P) (h : P → Q) : Q :=\n",
