@@ -244,7 +244,8 @@
     },
     {
       "lean": "lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro pq,\r\nintro qr,\r\ncases pq with hpq hqp,\r\ncases qr with hqr hrq,\r\nsplit,\r\nintro p,\r\nhave q : Q := hpq p,\r\nhave r : R := hqr q,\r\nexact r,\r\nintro r,\r\nhave q : Q := hrq r,\r\nhave p : P := hqp q,\r\nexact p, "
     },
     {
       "lean": "lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=\n",
