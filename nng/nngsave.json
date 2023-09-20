@@ -344,7 +344,8 @@
     },
     {
       "lean": "theorem mul_pos (a b : mynat) : a ≠ 0 → b ≠ 0 → a * b ≠ 0 :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "induction a with c,\r\nintro a,\r\nintro b,\r\nrw zero_mul,\r\nexact a,\r\nintro a,\r\ninduction b with d,\r\nintro b,\r\nrw mul_zero,\r\nexact b,\r\nintro b,\r\nrw succ_mul,\r\nrw add_succ,\r\napply succ_ne_zero, "
     },
     {
       "lean": "theorem eq_zero_or_eq_zero_of_mul_eq_zero (a b : mynat) (h : a * b = 0) :\n  a = 0 ∨ b = 0 :=\n",
