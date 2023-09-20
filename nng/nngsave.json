@@ -329,7 +329,8 @@
     },
     {
       "lean": "lemma add_right_eq_zero {a b : mynat} : a + b = 0 → a = 0 :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro ab,\r\ncases a with d,\r\nrefl,\r\nrw succ_add at ab,\r\nexfalso,\r\napply succ_ne_zero (d+b),\r\nexact ab, "
     },
     {
       "lean": "theorem add_one_eq_succ (d : mynat) : d + 1 = succ d :=\n",
