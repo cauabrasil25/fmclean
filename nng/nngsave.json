@@ -373,7 +373,8 @@
     },
     {
       "lean": "theorem le_succ (a b : mynat) : a ≤ b → a ≤ (succ b) :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro ab,\r\nrw le_iff_exists_add at ab,\r\ncases ab with c hc,\r\nrw le_iff_exists_add,\r\nuse c +1,\r\nrw ← succ_eq_add_one,\r\nrw add_succ,\r\napply succ_eq_succ_of_eq,\r\nrw hc,\r\nrefl, "
     },
     {
       "lean": "lemma zero_le (a : mynat) : 0 ≤ a :=\n",
