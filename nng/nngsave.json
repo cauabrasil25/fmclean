@@ -434,11 +434,12 @@
     },
     {
       "lean": "lemma lt_aux_one (a b : mynat) : a ≤ b ∧ ¬ (b ≤ a) → succ a ≤ b :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro ab,\r\ncases ab with ab ba,\r\ncases ab with d hb,\r\ncases d with e,\r\nexfalso,\r\napply ba,\r\nrw le_iff_exists_add,\r\nuse 0,\r\nrw add_zero at hb,\r\nrw add_zero,\r\nsymmetry,\r\nexact hb,\r\nrw le_iff_exists_add,\r\nuse e,\r\nrw hb,\r\nrw add_succ,\r\nrw succ_add,\r\nrefl, "
     },
     {
       "lean": "lemma lt_aux_two (a b : mynat) : succ a ≤ b → a ≤ b ∧ ¬ (b ≤ a) :=\n",
-      "editorText": "sorry"
+      "editorText": ""
     },
     {
       "lean": "lemma lt_iff_succ_le (a b : mynat) : a < b ↔ succ a ≤ b :=\n",
