@@ -198,7 +198,15 @@ end
 theorem demorgan_disj_converse :
   (¬P ∧ ¬Q) → ¬(P∨Q)  :=
 begin
-  sorry,
+  intro npnq,
+  cases npnq with np nq,
+  intro pq,
+  apply np,
+  cases pq,
+  exact pq,
+  exfalso,
+  apply nq,
+  exact pq,
 end
 
 theorem demorgan_conj :
