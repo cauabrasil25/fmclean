@@ -212,13 +212,23 @@ end
 theorem demorgan_conj :
   ¬(P∧Q) → (¬Q ∨ ¬P)  :=
 begin
-  sorry,
+  intro npq,
+  right,
+  intro p,
+  apply npq,
+  split,
+  exact p,
 end
 
 theorem demorgan_conj_converse :
   (¬Q ∨ ¬P) → ¬(P∧Q)  :=
 begin
-  sorry,
+  intro nqnp,
+  intro pq,
+  cases pq with p q,
+  cases nqnp,
+  exact nqnp(q),
+  exact nqnp(p),
 end
 
 theorem demorgan_conj_law :
