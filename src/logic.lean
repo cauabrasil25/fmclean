@@ -65,13 +65,23 @@ end
 theorem impl_as_disj_converse :
   (¬P ∨ Q) → (P → Q)  :=
 begin
-  sorry,
+  intro npq,
+  intro p,
+  cases npq with np q,
+  exfalso,
+  exact np(p),
+  exact q,
 end
 
 theorem disj_as_impl :
   (P ∨ Q) → (¬P → Q)  :=
 begin
-  sorry,
+  intro pq,
+  intro nq,
+  cases pq with p q,
+  exfalso,
+  exact nq(p),
+  exact q,
 end
 
 
@@ -93,7 +103,9 @@ end
 theorem impl_as_contrapositive_converse :
   (¬Q → ¬P) → (P → Q)  :=
 begin
-  sorry,
+  intro nqnp,
+  intro p,
+  
 end
 
 theorem contrapositive_law :
@@ -110,7 +122,13 @@ end
 theorem lem_irrefutable :
   ¬¬(P∨¬P)  :=
 begin
-  sorry,
+  intro  nnp,
+  apply nnp,
+  right,
+  intro p,
+  apply nnp,
+  left,
+  exact p,
 end
 
 
@@ -121,7 +139,13 @@ end
 theorem peirce_law_weak :
   ((P → Q) → P) → ¬¬P  :=
 begin
-  sorry,
+  intro pqp,
+  intro np,
+  apply np,
+  apply pqp,
+  intro p,
+  exfalso,
+  exact np(p),
 end
 
 
@@ -132,13 +156,18 @@ end
 theorem disj_as_negconj :
   P∨Q → ¬(¬P∧¬Q)  :=
 begin
-  sorry,
+  intro pq,
+  intro npnq,
+  cases npnq with np nq,
+  cases pq,
+  exact np(pq),
+  exact nq(pq),
 end
 
 theorem conj_as_negdisj :
   P∧Q → ¬(¬P∨¬Q)  :=
 begin
-  sorry,
+  intro,
 end
 
 
