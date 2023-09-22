@@ -22,7 +22,11 @@ theorem doubleneg_elim :
   ¬¬P → P  :=
 begin
   intro pb,
+  exfalso,
   apply pb,
+  intro p,
+  apply pb,
+
 end
 
 theorem doubleneg_law :
@@ -111,7 +115,19 @@ end
 theorem contrapositive_law :
   (P → Q) ↔ (¬Q → ¬P)  :=
 begin
-  sorry,
+  split,
+  intro pq,
+  intro nq,
+  intro p,
+  apply nq,
+  apply pq,
+  exact p,
+  intro nqnp,
+  intro p,
+  exfalso,
+  apply nqnp,
+  intro q,
+  apply nqnp,
 end
 
 
@@ -234,7 +250,14 @@ end
 theorem demorgan_conj_law :
   ¬(P∧Q) ↔ (¬Q ∨ ¬P)  :=
 begin
-  sorry,
+  split,
+  intro npq,
+  right,
+  intro p,
+  apply npq,
+  split,
+  exact p,
+  
 end
 
 theorem demorgan_disj_law :
@@ -268,13 +291,32 @@ end
 theorem distr_conj_disj :
   P∧(Q∨R) → (P∧Q)∨(P∧R)  :=
 begin
-  sorry,
+  intro pqr,
+  left,
+  split,
+  cases pqr,
+  exact pqr_left,
+  cases pqr with p qr,
+  cases qr,
+  exact qr,
+
 end
 
 theorem distr_conj_disj_converse :
   (P∧Q)∨(P∧R) → P∧(Q∨R)  :=
 begin
-  sorry,
+  intro pqpr,
+  cases pqpr,
+  cases pqpr with p q,
+  split,
+  exact p,
+  left,
+  exact q,
+  cases pqpr with p q,
+  split,
+  exact p,
+  right,
+  exact q,
 end
 
 theorem distr_disj_conj :
