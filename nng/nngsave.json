@@ -414,7 +414,8 @@
     },
     {
       "lean": "theorem add_le_add_right {a b : mynat} : a ≤ b → ∀ t, (a + t) ≤ (b + t) :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro t,\r\nintro d,\r\nrw le_iff_exists_add,\r\nrw le_iff_exists_add at t,\r\ncases t with e bh,\r\nuse e,\r\nrw bh,\r\nsimp, "
     },
     {
       "lean": "theorem le_of_succ_le_succ (a b : mynat) : succ a ≤ succ b → a ≤ b :=\n",
