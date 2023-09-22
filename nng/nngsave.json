@@ -409,7 +409,8 @@
     },
     {
       "lean": "lemma le_succ_self (a : mynat) : a ≤ succ a :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "rw le_iff_exists_add,\r\nuse succ 0,\r\nrw add_succ,\r\nrw add_zero,\r\nrefl, "
     },
     {
       "lean": "theorem add_le_add_right {a b : mynat} : a ≤ b → ∀ t, (a + t) ≤ (b + t) :=\n",
