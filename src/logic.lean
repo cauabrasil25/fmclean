@@ -375,7 +375,12 @@ end
 theorem uncurry_prop :
   (P→(Q→R)) → ((P∧Q)→R)  :=
 begin
-  sorry,
+  intro pqr,
+  intro pq,
+  cases pq with p q,
+  apply pqr,
+  exact p,
+  exact q,
 end
 
 
