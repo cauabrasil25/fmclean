@@ -341,7 +341,18 @@ end
 theorem distr_disj_conj_converse :
   (P∨Q)∧(P∨R) → P∨(Q∧R)  :=
 begin
-  sorry,
+  intro pqpr,
+  cases pqpr with pq pr,
+  cases pq,
+  left,
+  exact pq,
+  cases pr,
+  left,
+  exact pr,
+  right,
+  split,
+  exact pq,
+  exact pr,
 end
 
 
