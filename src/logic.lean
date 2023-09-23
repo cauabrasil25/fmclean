@@ -26,7 +26,7 @@ begin
   apply pb,
   intro p,
   apply pb,
-
+  ....
 end
 
 theorem doubleneg_law :
@@ -34,6 +34,7 @@ theorem doubleneg_law :
 begin
   split,
   intro pb,
+  ......
 end
 
 ------------------------------------------------
@@ -109,7 +110,10 @@ theorem impl_as_contrapositive_converse :
 begin
   intro nqnp,
   intro p,
-  
+  exfalso,
+  apply nqnp,
+  intro q,
+  ........
 end
 
 theorem contrapositive_law :
@@ -119,15 +123,15 @@ begin
   intro pq,
   intro nq,
   intro p,
-  apply nq,
-  apply pq,
-  exact p,
+  have q: Q := pq p,
+  have b:false := nq q,
+  contradiction,
   intro nqnp,
   intro p,
   exfalso,
   apply nqnp,
   intro q,
-  apply nqnp,
+  ..........
 end
 
 
@@ -234,6 +238,7 @@ begin
   apply npq,
   split,
   exact p,
+  .........
 end
 
 theorem demorgan_conj_converse :
@@ -257,7 +262,7 @@ begin
   apply npq,
   split,
   exact p,
-  
+  .................
 end
 
 theorem demorgan_disj_law :
@@ -299,7 +304,7 @@ begin
   cases pqr with p qr,
   cases qr,
   exact qr,
-
+  ........
 end
 
 theorem distr_conj_disj_converse :
@@ -487,7 +492,9 @@ end
 theorem demorgan_exists_converse :
   (∀x, ¬P x) → ¬(∃x, P x)  :=
 begin
-  sorry,
+  intro tp,
+  intro nep,
+  ......
 end
 
 theorem demorgan_forall :
