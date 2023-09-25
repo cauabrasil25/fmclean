@@ -115,10 +115,11 @@ theorem impl_as_contrapositive_converse :
 begin
   intro nqnp,
   intro p,
+  by_cases q:Q,
+  exact q,
+  have np: ¬P:= nqnp q,
   exfalso,
-  apply nqnp,
-  intro q,
-  ........
+  exact np(p),
 end
 
 theorem contrapositive_law :
