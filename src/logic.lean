@@ -260,12 +260,21 @@ theorem demorgan_conj_law :
 begin
   split,
   intro npq,
-  right,
-  intro p,
+  by_cases p:P,
+  left,
+  intro q,
   apply npq,
   split,
   exact p,
-  ..........
+  exact q,
+  right,
+  exact p,
+  intro npnq,
+  intro pq,
+  cases pq with p q,
+  cases npnq,
+  exact npnq(q),
+  exact npnq(p),
 end
 
 theorem demorgan_disj_law :
