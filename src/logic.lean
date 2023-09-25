@@ -494,7 +494,10 @@ theorem demorgan_exists_converse :
 begin
   intro tp,
   intro nep,
-  ......
+  cases nep with q p2,
+  have np:= tp q,
+  apply np,
+  exact p2,
 end
 
 theorem demorgan_forall :
