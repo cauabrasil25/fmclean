@@ -32,8 +32,14 @@ theorem doubleneg_law :
   ¬¬P ↔ P  :=
 begin
   split,
-  intro pb,
-  ......
+  intro np,
+  by_cases p:P,
+  exact p,
+  exfalso,
+  exact np(p),
+  intro p,
+  intro np,
+  exact np(p),
 end
 
 ------------------------------------------------
