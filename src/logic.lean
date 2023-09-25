@@ -129,15 +129,15 @@ begin
   intro pq,
   intro nq,
   intro p,
-  have q: Q := pq p,
-  have b:false := nq q,
-  contradiction,
+  have q:Q := pq p,
+  exact nq(q),
   intro nqnp,
   intro p,
+  by_cases q:Q,
+  exact q,
   exfalso,
-  apply nqnp,
-  intro q,
-  ..........
+  have np:¬P :=nqnp q, 
+  exact np(p),
 end
 
 
