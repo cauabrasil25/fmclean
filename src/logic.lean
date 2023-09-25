@@ -22,11 +22,10 @@ theorem doubleneg_elim :
   ¬¬P → P  :=
 begin
   intro pb,
+  by_cases p:P,
+  exact p,
   exfalso,
-  apply pb,
-  intro p,
-  apply pb,
-  ....
+  exact pb(p),
 end
 
 theorem doubleneg_law :
@@ -517,7 +516,14 @@ end
 theorem demorgan_forall :
   ¬(∀x, P x) → (∃x, ¬P x)  :=
 begin
-  sorry,
+  intro np,
+  by_contradiction hboom,
+  by_cases (∃x, ¬P x),
+  have ndacerto := hboom(h),
+  exact ndacerto,
+  apply np,
+  intro p2,
+  .........
 end
 
 theorem demorgan_forall_converse :
