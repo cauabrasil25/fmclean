@@ -233,12 +233,15 @@ theorem demorgan_conj :
   ¬(P∧Q) → (¬Q ∨ ¬P)  :=
 begin
   intro npq,
-  right,
-  intro p,
+  by_cases p:P,
+  left,
+  intro q,
   apply npq,
   split,
   exact p,
-  .........
+  exact q,
+  right,
+  exact p,
 end
 
 theorem demorgan_conj_converse :
@@ -262,7 +265,7 @@ begin
   apply npq,
   split,
   exact p,
-  .................
+  ..........
 end
 
 theorem demorgan_disj_law :
