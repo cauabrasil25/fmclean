@@ -547,7 +547,21 @@ end
 theorem demorgan_forall_law :
   ¬(∀x, P x) ↔ (∃x, ¬P x)  :=
 begin
-  sorry,
+  split,
+  intro np,
+  by_contradiction h,
+  apply np,
+  intro x,
+  by_contradiction h1,
+  apply h,
+  existsi x,
+  exact h1,
+  intro enp,
+  intro ap,
+  cases enp with x np,
+  have px:= ap x,
+  have false:= np px,
+  exact false,
 end
 
 theorem demorgan_exists_law :
