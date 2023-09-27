@@ -524,13 +524,13 @@ theorem demorgan_forall :
   ¬(∀x, P x) → (∃x, ¬P x)  :=
 begin
   intro np,
-  by_contradiction hboom,
-  by_cases (∃x, ¬P x),
-  have ndacerto := hboom(h),
-  exact ndacerto,
+  by_contradiction h,
   apply np,
-  intro p2,
-  .........
+  intro x,
+  by_contradiction h1,
+  apply h,
+  existsi x,
+  exact h1,
 end
 
 theorem demorgan_forall_converse :
