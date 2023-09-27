@@ -536,7 +536,12 @@ end
 theorem demorgan_forall_converse :
   (∃x, ¬P x) → ¬(∀x, P x)  :=
 begin
-  sorry,
+  intro enp,
+  intro ap,
+  cases enp with x np,
+  have px:= ap x,
+  have false := np px,
+  exact false,
 end
 
 theorem demorgan_forall_law :
