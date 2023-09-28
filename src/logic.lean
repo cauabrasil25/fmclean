@@ -660,7 +660,15 @@ end
 theorem exists_disj_as_disj_exists :
   (∃x, P x ∨ Q x) → (∃x, P x) ∨ (∃x, Q x)  :=
 begin
-  sorry,
+  intro epq,
+  cases epq with x pqx,
+  cases pqx,
+  left,
+  existsi x,
+  exact pqx,
+  right,
+  existsi x,
+  exact pqx,
 end
 
 theorem exists_disj_as_disj_exists_converse :
